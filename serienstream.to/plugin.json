@@ -1,0 +1,14 @@
+{
+  "type": "ecmascript",
+  "id": "serienstream.to",
+  "file": "serienstream.js",
+  "category": "video",
+  "showtimeVersion": "4.3.167",
+  "version": "0.1",
+  "author": "BuXXe (@dieBuXXe)",
+  "title": "serienstream.to",
+  "icon": "serienstream.png",
+  "synopsis": "Movian plugin to watch serienstream.to streams",
+  "description":"<p>serienstream.to Movian plugin allows the integration of serienstream.to streams into Movian. serienstream.to offers a broad variety of german / english tv-series. If you encounter problems, leave a note at the github. Visit at: https://github.com/BuXXe/movian-serienstream-plugin</p>",
+  "homepage":"https://github.com/BuXXe/movian-serienstream-plugin"
+}
