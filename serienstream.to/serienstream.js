@@ -32,7 +32,7 @@
   plugin.addURI(PLUGIN_PREFIX + ":EpisodesHandler:(.*):(.*):(.*)", function(page,episodeLink, hostername,pagetitle){
 	  	page.type = 'directory';
 	  	page.metadata.title = pagetitle;
-
+	  	page.metadata.icon = Plugin.path + 'serienstream.png';
 		
 		var vidlink = resolvers.resolve("http://serienstream.to"+episodeLink, hostername)
 		if(vidlink == null)
@@ -43,7 +43,7 @@
   
   plugin.addURI(PLUGIN_PREFIX + ":ShowHostsForEpisode:(.*)", function(page,episodeLink){
 	  page.type = 'directory';
-	  
+	  page.metadata.icon = Plugin.path + 'serienstream.png';
 	  	var getHosterLink = showtime.httpGet("http://serienstream.to"+episodeLink);
 		var dom = html.parse(getHosterLink.toString());
 
@@ -104,7 +104,7 @@
 	  var SeasonResponse = showtime.httpGet("http://serienstream.to"+seasonLink);
 	  var dom = html.parse(SeasonResponse.toString());
 	  var seasonnumber = dom.root.getElementByClassName('active')[0].textContent;
-	  
+	  page.metadata.icon = Plugin.path + 'serienstream.png';
 
 	  page.metadata.title = dom.root.getElementByClassName('series-title')[0].getElementByTagName("h1")[0].getElementByTagName("span")[0].textContent  + " - Season "+ seasonnumber;
 	  var tablerows = dom.root.getElementByClassName('seasonEpisodesList')[0].getElementByTagName("tbody")[0].getElementByTagName("tr");
@@ -129,7 +129,7 @@
   plugin.addURI(PLUGIN_PREFIX + ':SeriesSite:(.*)', function(page, series) {
 	  	page.loading = false;
 	  	page.type = 'directory';
-	  	
+	  	page.metadata.icon = Plugin.path + 'serienstream.png';
 
 	    var seriespageresponse = showtime.httpGet('http://serienstream.to'+series);
 	  	var dom = html.parse(seriespageresponse.toString());
@@ -157,7 +157,7 @@
   plugin.addURI(PLUGIN_PREFIX + ':Browse', function(page) {
 	  	page.type = "directory";
 	    page.metadata.title = "serienstream.to series list";
-
+	    page.metadata.icon = Plugin.path + 'serienstream.png';
 	  	var BrowseResponse = showtime.httpGet("http://serienstream.to/serien");
 	  	var dom = html.parse(BrowseResponse.toString());
 	  	 
@@ -182,7 +182,7 @@
   //Search param indicates the search criteria: Artist, Album, Track
   plugin.addURI(PLUGIN_PREFIX+":Search", function(page) {
 	  page.type="directory";
-  
+	  page.metadata.icon = Plugin.path + 'serienstream.png';
 	  var res = showtime.textDialog("What series do you want to search for?", true,true);
 	  
 	  // check for user abort
@@ -231,6 +231,7 @@
   // Register Start Page
   plugin.addURI(PLUGIN_PREFIX+"start", function(page) {
     page.type = "directory";
+    page.metadata.icon = Plugin.path + 'serienstream.png';
     page.metadata.title = "serienstream.to Main Menu";
     page.appendItem(PLUGIN_PREFIX + ':Browse', 'directory',{title: "Browse"});
     page.appendItem(PLUGIN_PREFIX + ':Search','item',{ title: "Search...", });
