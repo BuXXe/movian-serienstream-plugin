@@ -85,7 +85,7 @@
 	    	
 	    	if(resolverstatus)
 	    	{
-	    		page.appendItem(PLUGIN_PREFIX + ":EpisodesHandler:" + hosterlink+":"+hostname+":"+pagetitle, 'video', {
+	    		page.appendItem(PLUGIN_PREFIX + ":EpisodesHandler:" + hosterlink+":"+hostname+":"+pagetitle, 'directory', {
 					  title: new showtime.RichText(language +" " + hostname + statusmessage),
 					  description: description
 				  });
