@@ -92,7 +92,7 @@
 	    	}
 	    	else
 	    	{
-	    		page.appendPassiveItem('video', '', { title: new showtime.RichText(language +" "+ hostname + statusmessage),description: description  });
+	    		page.appendPassiveItem('directory', '', { title: new showtime.RichText(language +" "+ hostname + statusmessage),description: description  });
 	    	}
 	    }
   });
